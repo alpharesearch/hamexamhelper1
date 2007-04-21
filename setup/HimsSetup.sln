@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 # SharpDevelop 2.1.0.2429
-Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "HimsSetup", "HimsSetup.wixproj", "{83BA24ED-093E-4037-AEF9-0C80E35F7724}"
+Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "HEH_Setup", "HEH_Setup.wixproj", "{83BA24ED-093E-4037-AEF9-0C80E35F7724}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
