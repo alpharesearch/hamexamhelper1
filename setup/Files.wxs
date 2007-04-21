@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi">
+	<Fragment>
+		<DirectoryRef Id="TARGETDIR">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="HEH" LongName="HamExamHelper">
+					<Component Id="MyComponent" Guid="B373634D-EA3F-4131-B138-9D97E480B346" DiskId="1">
+						<File Id="LicenseFile" Name="license.rtf" Source="license.rtf">
+							<Shortcut Id="StartmenuLic" Directory="ProgramMenuDir" Name="License" WorkingDirectory='INSTALLDIR'/>
+						</File>
+						<File Id="GnuTextFile" Name="gnu.txt" Source="..\bin\Release\gnu.txt"/>
+						<File Id="HEHExeFile" Name="HEH.exe" LongName="HamExamHelper.exe" Source="..\bin\Release\HamExamHelper.exe">
+							<Shortcut Id="StartmenuHEH" Directory="ProgramMenuDir" Name="HEH" LongName="HamExamHelper" WorkingDirectory='INSTALLDIR' Icon="HEH.ICO" IconIndex="0" />
+                			<Shortcut Id="DesktopHEH" Directory="DesktopFolder" Name="HEH" LongName="HamExamHelper" WorkingDirectory='INSTALLDIR' Icon="HEH.ICO" IconIndex="0" />
+						</File>
+						<File Id="tf1" Name="2002E.txt" LongName="2002Extra.txt" Source="..\bin\Release\2002Extra.txt"/>
+						<File Id="tf2" Name="2004G.txt" LongName="2004General.txt" Source="..\bin\Release\2004General.txt"/>
+						<File Id="tf3" Name="2006T.txt" LongName="2006Tech.txt" Source="..\bin\Release\2006Tech.txt"/>
+						<File Id="tf4" Name="2007G.txt" LongName="2007General.txt" Source="..\bin\Release\2007General.txt"/>
+						
+						<File Id="SpeechFile" Name="Interop.dll" LongName="Interop.SpeechLib.dll" Source="..\bin\Release\Interop.SpeechLib.dll"/>
+						<File Id="ReadmeFile" Name="readme.txt" Source="..\bin\Release\readme.txt">
+							<Shortcut Id="StartmenuReadme" Directory="ProgramMenuDir" Name="Readme" WorkingDirectory='INSTALLDIR'/>
+						</File>
+					</Component>
+				</Directory>
+			<Directory Id="ProgramMenuFolder" Name="PMenu" LongName="Programs">
+		    	<Directory Id="ProgramMenuDir" Name='HEH' LongName="HamExamHelper" />
+		    </Directory>
+			<Directory Id="DesktopFolder" Name="Desktop" />
+			</Directory>
+		</DirectoryRef>
+	</Fragment>
+</Wix>

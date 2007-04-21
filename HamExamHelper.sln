@@ -1,0 +1,16 @@
+﻿Microsoft Visual Studio Solution File, Format Version 9.00
+# SharpDevelop 2.1.0.1852
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamExamHelper", "HamExamHelper.csproj", "{2EE6AD1E-0FC5-4123-B227-2F210EF184DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EE6AD1E-0FC5-4123-B227-2F210EF184DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EE6AD1E-0FC5-4123-B227-2F210EF184DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EE6AD1E-0FC5-4123-B227-2F210EF184DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EE6AD1E-0FC5-4123-B227-2F210EF184DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal
