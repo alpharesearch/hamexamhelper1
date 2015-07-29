@@ -18,11 +18,11 @@
  *
  *
  * Created by Markus Schulz with the help of SharpDevelop and Visual C# express.
- * User: $Author$
- * Date: $LastChangedDate$
- * Rev : $Rev$
+ * User: $Author: alpharesearch $
+ * Date: $LastChangedDate: 2007-04-21 00:38:35 -0400 (Sat, 21 Apr 2007) $
+ * Rev : $Rev: 19 $
  * 
- * ID: $Id$
+ * ID: $Id: AssemblyInfo.cs 19 2007-04-21 04:38:35Z alpharesearch $
  */
 using System.Reflection;
 using System.Runtime.CompilerServices;

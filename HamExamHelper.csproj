@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <RootNamespace>HamExamHelper</RootNamespace>
@@ -22,6 +23,7 @@
     <PublisherName>HamExamHelper</PublisherName>
     <ApplicationVersion>1.0.0.4</ApplicationVersion>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NoWin32Manifest>False</NoWin32Manifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
@@ -32,9 +34,9 @@
     <DebugSymbols>True</DebugSymbols>
     <DebugType>Full</DebugType>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>key.pfx</AssemblyOriginatorKeyFile>
-    <DelaySign>True</DelaySign>
+    <DelaySign>False</DelaySign>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -72,32 +74,20 @@
     </EmbeddedResource>
     <Compile Include="QAdb.cs" />
     <Compile Include="myList.cs" />
-    <None Include="2002Extra.txt">
+    <None Include="Extra.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="2004General.txt">
+    <None Include="General.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="2006Tech.txt">
+    <None Include="info.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="2007General.txt">
+    <None Include="Tech.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="HEH.ICO" />
     <None Include="key.pfx" />
-    <None Include="pics\jpg\E5-1.jpg" />
-    <None Include="pics\jpg\E5-2.jpg" />
-    <None Include="pics\jpg\E6-1.jpg" />
-    <None Include="pics\jpg\E6-2.jpg" />
-    <None Include="pics\jpg\E6-3.jpg" />
-    <None Include="pics\jpg\E6-4.jpg" />
-    <None Include="pics\jpg\E6-5.jpg" />
-    <None Include="pics\jpg\E7-1.jpg" />
-    <None Include="pics\jpg\E7-2.jpg" />
-    <None Include="pics\jpg\E7-3.jpg" />
-    <None Include="pics\jpg\E9-1.jpg" />
-    <None Include="pics\jpg\E9-2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="readme.txt">
@@ -119,7 +109,6 @@
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
-    <Content Include="pics\jpg\G7-1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
 </Project>

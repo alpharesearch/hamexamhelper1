@@ -18,11 +18,11 @@
  *
  *
  * Created by Markus Schulz with the help of SharpDevelop and Visual C# express.
- * User: $Author$
- * Date: $LastChangedDate$
- * Rev : $Rev$
+ * User: $Author: alpharesearch $
+ * Date: $LastChangedDate: 2007-04-21 00:38:35 -0400 (Sat, 21 Apr 2007) $
+ * Rev : $Rev: 19 $
  * 
- * ID: $Id$
+ * ID: $Id: MainForm.cs 19 2007-04-21 04:38:35Z alpharesearch $
  */
 
 using System;
@@ -62,6 +62,19 @@ namespace HamExamHelper
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
+			string donate = "If you like this program or after a successful exam you can donate via Paypal to donate@ak4ns.com\n\n";
+			string pictures = "\n\nIf some pictures are missing you can go to http://ncvec.org/ and download the graphics and schematics and convert it to the right jpg file name. If you want you can send me the pictures and I include them.";
+			try
+			{
+				TextReader tr;
+				tr = new StreamReader("info.txt");
+				MessageBox.Show(donate+tr.ReadToEnd()+pictures,"Attention");
+			}
+			catch (FileNotFoundException ex)
+			{
+				MessageBox.Show(donate+ex.FileName, "File not found");
+				Application.Exit();
+			}
 			Application.Run(new MainForm());
 		}
 		
@@ -91,7 +104,7 @@ namespace HamExamHelper
 			Regex bRegEx = new Regex(@"B\..*");
 			Regex cRegEx = new Regex(@"C\..*");
 			Regex dRegEx = new Regex(@"D\..*");
-			Regex pictureRegEx = new Regex(@"((G|E)\d-\d)");
+			Regex pictureRegEx = new Regex(@"(\s+(T|G|E)\d-?\d?)");
 			Regex tRegEx = new Regex(@"~~");
 			
 			while ((line = tr.ReadLine()) != null)
@@ -172,7 +185,10 @@ namespace HamExamHelper
 					myObj.AnswerB = myObj.AnswerB+".";
 					myObj.AnswerC = myObj.AnswerC+".";
 					myObj.AnswerD = myObj.AnswerD+".";
-					if(pictureRegEx.Match(myObj.Question).Success) myObj.Picture = pictureRegEx.Match(myObj.Question).ToString();
+					if(pictureRegEx.Match(myObj.Question).Success) 
+					{
+						myObj.Picture = pictureRegEx.Match(myObj.Question).ToString();
+					}
 					myQAdb.Add(myObj);
 				}
 			}
@@ -324,7 +340,7 @@ namespace HamExamHelper
 			TextReader tr;
 			try
 			{
-				tr = new StreamReader("2006Tech.txt");
+				tr = new StreamReader("Tech.txt");
 				pars(tr, @"(^T\d[a-zA-Z]\d\d)\s\(([A-D])\)", sender, e);
 				createMenues();
 			}
@@ -334,10 +350,10 @@ namespace HamExamHelper
 				Application.Exit();
 				tr = null;
 			}
-			cWToolStripMenuItem.Checked = false;
+			//cWToolStripMenuItem.Checked = false;
 			techToolStripMenuItem.Checked=true;
 			generalToolStripMenuItem.Checked=false;
-			generalToolStripMenuItem1.Checked=false;
+			generalToolStripMenuItem.Checked=false;
 			extraToolStripMenuItem.Checked=false;
 			
 		}
@@ -353,7 +369,7 @@ namespace HamExamHelper
 			TextReader tr;
 			try
 			{
-				tr = new StreamReader("2004General.txt");
+				tr = new StreamReader("General.txt");
 				pars(tr, @"(^G\d[a-zA-Z]\d\d)\s\(([A-D])\)", sender, e);
 				createMenues();
 			}
@@ -363,41 +379,14 @@ namespace HamExamHelper
 				Application.Exit();
 				tr = null;
 			}
-			cWToolStripMenuItem.Checked = false;
+			//cWToolStripMenuItem.Checked = false;
 			techToolStripMenuItem.Checked=false;
 			generalToolStripMenuItem.Checked=true;
-			generalToolStripMenuItem1.Checked=false;
+			generalToolStripMenuItem.Checked=false;
 			extraToolStripMenuItem.Checked=false;
 			
 		}
 		
-		void GeneralToolStripMenuItem1Click(object sender, EventArgs e)
-		{
-			textBoxGo.Text = "0";
-			pictureBoxE.Visible = false;
-			labelA.Width = 606;
-			labelB.Width = 606;
-			labelC.Width = 606;
-			labelD.Width = 606;
-			TextReader tr;
-			try
-			{
-				tr = new StreamReader("2007General.txt");
-				pars(tr, @"(^G\d[a-zA-Z]\d\d)\s\(([A-D])\)", sender, e);
-				createMenues();
-			}
-			catch (FileNotFoundException ex)
-			{
-				MessageBox.Show(ex.FileName, "File not found");
-				Application.Exit();
-				tr = null;
-			}
-			cWToolStripMenuItem.Checked = false;
-			techToolStripMenuItem.Checked=false;
-			generalToolStripMenuItem.Checked=false;
-			generalToolStripMenuItem1.Checked=true;
-			extraToolStripMenuItem.Checked=false;
-		}
 		
 		void ExtraToolStripMenuItemClick(object sender, System.EventArgs e)
 		{
@@ -410,7 +399,7 @@ namespace HamExamHelper
 			TextReader tr;
 			try
 			{
-				tr = new StreamReader("2002Extra.txt");
+				tr = new StreamReader("Extra.txt");
 				pars(tr, @"(^E\d[a-zA-Z]\d\d)\s\(([A-D])\)", sender, e);
 				createMenues();
 			}
@@ -420,10 +409,10 @@ namespace HamExamHelper
 				Application.Exit();
 				tr = null;
 			}
-			cWToolStripMenuItem.Checked = false;
+			//cWToolStripMenuItem.Checked = false;
 			techToolStripMenuItem.Checked=false;
 			generalToolStripMenuItem.Checked=false;
-			generalToolStripMenuItem1.Checked=false;
+			generalToolStripMenuItem.Checked=false;
 			extraToolStripMenuItem.Checked=true;
 			
 		}
@@ -456,12 +445,19 @@ namespace HamExamHelper
 			}
 			//pictures
 			
-			if(myQAdb[Convert.ToInt32(textBoxGo.Text)].Picture!=null)
+			if(myQAdb[Convert.ToInt32(textBoxGo.Text)].Picture!=null) // test with tech 267 / extra 129 299
 			{
 				pictureBoxE.Visible = true;
 				System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 				string mypicture =myQAdb[Convert.ToInt32(textBoxGo.Text)].Picture;
-				this.pictureBoxE.Image = ((System.Drawing.Image)resources.GetObject((mypicture)));
+				//this.pictureBoxE.Image = ((System.Drawing.Image)resources.GetObject((mypicture)));
+				try{
+					this.pictureBoxE.Image = Image.FromFile(mypicture.TrimStart()+".jpg");
+				}
+				catch(System.IO.FileNotFoundException)
+				{
+					if (checkBoxError.Checked) MessageBox.Show("There was an error opening "+mypicture+".jpg.\nThe source is located at http://ncvec.org/", "Please create the file.");
+				}
 				labelA.Width = 300;
 				labelB.Width = 300;
 				labelC.Width = 300;
@@ -974,7 +970,7 @@ namespace HamExamHelper
 		
 		void ToolStripTextBox1Click(object sender, System.EventArgs e)
 		{
-			MessageBox.Show("V1.0.0.3", "Version");
+			MessageBox.Show("V1.2.0.0", "Version");
 		}
 
 		private void setupToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1005,7 +1001,7 @@ namespace HamExamHelper
 		void HttphamexamwikidotcomToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			
-		System.Diagnostics.Process.Start("http://hamexamhelper.sourceforge.net/");
+		System.Diagnostics.Process.Start("http://ak4ns.com/");
 
 
 		}

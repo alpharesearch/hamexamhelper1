@@ -18,11 +18,11 @@
  *
  *
  * Created by Markus Schulz with the help of SharpDevelop and Visual C# express.
- * User: $Author$
- * Date: $LastChangedDate$
- * Rev : $Rev$
+ * User: $Author: alpharesearch $
+ * Date: $LastChangedDate: 2007-04-21 00:38:35 -0400 (Sat, 21 Apr 2007) $
+ * Rev : $Rev: 19 $
  * 
- * ID: $Id$
+ * ID: $Id: MainForm.Designer.cs 19 2007-04-21 04:38:35Z alpharesearch $
  */
 namespace HamExamHelper
 {
@@ -58,10 +58,8 @@ namespace HamExamHelper
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.cWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.techToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.generalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.extraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,6 +100,7 @@ namespace HamExamHelper
 			this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
 			this.checkBoxVoice = new System.Windows.Forms.CheckBox();
 			this.pictureBoxE = new System.Windows.Forms.PictureBox();
+			this.checkBoxError = new System.Windows.Forms.CheckBox();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBoxE)).BeginInit();
@@ -119,7 +118,7 @@ namespace HamExamHelper
 									this.toolStripTextBoxWrong});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(632, 25);
+			this.menuStrip1.Size = new System.Drawing.Size(632, 27);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1ItemClicked);
@@ -127,62 +126,46 @@ namespace HamExamHelper
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.cWToolStripMenuItem,
 									this.techToolStripMenuItem,
 									this.generalToolStripMenuItem,
-									this.generalToolStripMenuItem1,
 									this.extraToolStripMenuItem,
 									this.toolStripSeparator1,
 									this.exitToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(57, 21);
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 23);
 			this.fileToolStripMenuItem.Text = "Element";
 			this.fileToolStripMenuItem.Click += new System.EventHandler(this.FileToolStripMenuItemClick);
-			// 
-			// cWToolStripMenuItem
-			// 
-			this.cWToolStripMenuItem.Name = "cWToolStripMenuItem";
-			this.cWToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-			this.cWToolStripMenuItem.Text = "Morse Code";
-			this.cWToolStripMenuItem.Click += new System.EventHandler(this.CWToolStripMenuItemClick);
 			// 
 			// techToolStripMenuItem
 			// 
 			this.techToolStripMenuItem.Name = "techToolStripMenuItem";
-			this.techToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-			this.techToolStripMenuItem.Text = "2006 Technician";
+			this.techToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+			this.techToolStripMenuItem.Text = "Technician";
 			this.techToolStripMenuItem.Click += new System.EventHandler(this.TechToolStripMenuItemClick);
 			// 
 			// generalToolStripMenuItem
 			// 
 			this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
-			this.generalToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-			this.generalToolStripMenuItem.Text = "2004 General";
+			this.generalToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+			this.generalToolStripMenuItem.Text = "General";
 			this.generalToolStripMenuItem.Click += new System.EventHandler(this.GeneralToolStripMenuItemClick);
-			// 
-			// generalToolStripMenuItem1
-			// 
-			this.generalToolStripMenuItem1.Name = "generalToolStripMenuItem1";
-			this.generalToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
-			this.generalToolStripMenuItem1.Text = "2007 General";
-			this.generalToolStripMenuItem1.Click += new System.EventHandler(this.GeneralToolStripMenuItem1Click);
 			// 
 			// extraToolStripMenuItem
 			// 
 			this.extraToolStripMenuItem.Name = "extraToolStripMenuItem";
-			this.extraToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-			this.extraToolStripMenuItem.Text = "2006 Extra ";
+			this.extraToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+			this.extraToolStripMenuItem.Text = "Extra ";
 			this.extraToolStripMenuItem.Click += new System.EventHandler(this.ExtraToolStripMenuItemClick);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
 			// 
@@ -199,7 +182,7 @@ namespace HamExamHelper
 									this.toolStripSeparator2,
 									this.scoreToolStripMenuItem});
 			this.modeToolStripMenuItem.Name = "modeToolStripMenuItem";
-			this.modeToolStripMenuItem.Size = new System.Drawing.Size(45, 21);
+			this.modeToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
 			this.modeToolStripMenuItem.Text = "Mode";
 			// 
 			// showAnswersToolStripMenuItem
@@ -224,7 +207,7 @@ namespace HamExamHelper
 			this.tA1ToolStripMenuItem.Checked = true;
 			this.tA1ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.tA1ToolStripMenuItem.Name = "tA1ToolStripMenuItem";
-			this.tA1ToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+			this.tA1ToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
 			this.tA1ToolStripMenuItem.Text = "TA1";
 			this.tA1ToolStripMenuItem.Click += new System.EventHandler(this.tA1ToolStripMenuItem_Click);
 			// 
@@ -255,7 +238,7 @@ namespace HamExamHelper
 			this.tA1ToolStripMenuItem1.Checked = true;
 			this.tA1ToolStripMenuItem1.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.tA1ToolStripMenuItem1.Name = "tA1ToolStripMenuItem1";
-			this.tA1ToolStripMenuItem1.Size = new System.Drawing.Size(104, 22);
+			this.tA1ToolStripMenuItem1.Size = new System.Drawing.Size(95, 22);
 			this.tA1ToolStripMenuItem1.Text = "TA1";
 			this.tA1ToolStripMenuItem1.Click += new System.EventHandler(this.tA1ToolStripMenuItem1_Click);
 			// 
@@ -291,21 +274,21 @@ namespace HamExamHelper
 									this.toolStripTextBox1,
 									this.httphamexamwikidotcomToolStripMenuItem});
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(48, 21);
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 23);
 			this.aboutToolStripMenuItem.Text = "About";
 			// 
 			// toolStripTextBox1
 			// 
 			this.toolStripTextBox1.Name = "toolStripTextBox1";
-			this.toolStripTextBox1.Size = new System.Drawing.Size(130, 21);
-			this.toolStripTextBox1.Text = "(C) 2006 Markus Schulz";
+			this.toolStripTextBox1.Size = new System.Drawing.Size(130, 23);
+			this.toolStripTextBox1.Text = "(C) 2006-2015 Markus Schulz";
 			this.toolStripTextBox1.Click += new System.EventHandler(this.ToolStripTextBox1Click);
 			// 
 			// httphamexamwikidotcomToolStripMenuItem
 			// 
 			this.httphamexamwikidotcomToolStripMenuItem.Name = "httphamexamwikidotcomToolStripMenuItem";
-			this.httphamexamwikidotcomToolStripMenuItem.Size = new System.Drawing.Size(279, 22);
-			this.httphamexamwikidotcomToolStripMenuItem.Text = "http://hamexamhelper.sourceforge.net/";
+			this.httphamexamwikidotcomToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+			this.httphamexamwikidotcomToolStripMenuItem.Text = "http://ak4ns.com/";
 			this.httphamexamwikidotcomToolStripMenuItem.Click += new System.EventHandler(this.HttphamexamwikidotcomToolStripMenuItemClick);
 			// 
 			// toolStripTextBoxTime
@@ -313,19 +296,19 @@ namespace HamExamHelper
 			this.toolStripTextBoxTime.BackColor = System.Drawing.SystemColors.Control;
 			this.toolStripTextBoxTime.Name = "toolStripTextBoxTime";
 			this.toolStripTextBoxTime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.toolStripTextBoxTime.Size = new System.Drawing.Size(160, 21);
+			this.toolStripTextBoxTime.Size = new System.Drawing.Size(160, 23);
 			// 
 			// toolStripTextBoxRight
 			// 
 			this.toolStripTextBoxRight.BackColor = System.Drawing.SystemColors.Control;
 			this.toolStripTextBoxRight.Name = "toolStripTextBoxRight";
-			this.toolStripTextBoxRight.Size = new System.Drawing.Size(100, 21);
+			this.toolStripTextBoxRight.Size = new System.Drawing.Size(100, 23);
 			// 
 			// toolStripTextBoxWrong
 			// 
 			this.toolStripTextBoxWrong.BackColor = System.Drawing.SystemColors.Control;
 			this.toolStripTextBoxWrong.Name = "toolStripTextBoxWrong";
-			this.toolStripTextBoxWrong.Size = new System.Drawing.Size(100, 21);
+			this.toolStripTextBoxWrong.Size = new System.Drawing.Size(100, 23);
 			// 
 			// labelQuestion
 			// 
@@ -413,9 +396,9 @@ namespace HamExamHelper
 			this.textBoxGo.Size = new System.Drawing.Size(35, 20);
 			this.textBoxGo.TabIndex = 9;
 			this.textBoxGo.Text = "0";
-			this.textBoxGo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxGo_KeyPress);
 			this.textBoxGo.TextChanged += new System.EventHandler(this.TextBoxGoTextChanged);
 			this.textBoxGo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxGo_KeyDown);
+			this.textBoxGo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxGo_KeyPress);
 			// 
 			// buttonGo
 			// 
@@ -459,13 +442,13 @@ namespace HamExamHelper
 			// LabelQnum
 			// 
 			this.LabelQnum.Name = "LabelQnum";
-			this.LabelQnum.Size = new System.Drawing.Size(38, 17);
+			this.LabelQnum.Size = new System.Drawing.Size(40, 17);
 			this.LabelQnum.Text = "T1A01";
 			// 
 			// labelNo
 			// 
 			this.labelNo.Name = "labelNo";
-			this.labelNo.Size = new System.Drawing.Size(35, 17);
+			this.labelNo.Size = new System.Drawing.Size(36, 17);
 			this.labelNo.Text = "0/100";
 			// 
 			// toolStripProgressBar1
@@ -501,11 +484,23 @@ namespace HamExamHelper
 			this.pictureBoxE.TabStop = false;
 			this.pictureBoxE.Visible = false;
 			// 
+			// checkBoxError
+			// 
+			this.checkBoxError.Checked = true;
+			this.checkBoxError.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBoxError.Location = new System.Drawing.Point(250, 407);
+			this.checkBoxError.Name = "checkBoxError";
+			this.checkBoxError.Size = new System.Drawing.Size(104, 24);
+			this.checkBoxError.TabIndex = 29;
+			this.checkBoxError.Text = "Image Errors";
+			this.checkBoxError.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(632, 453);
+			this.Controls.Add(this.checkBoxError);
 			this.Controls.Add(this.checkBoxVoice);
 			this.Controls.Add(this.checkBoxAM);
 			this.Controls.Add(this.buttonGo);
@@ -524,7 +519,7 @@ namespace HamExamHelper
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "MainForm";
-			this.Text = "HamExamHelper V1.1";
+			this.Text = "HamExamHelper V1.2";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
@@ -534,11 +529,11 @@ namespace HamExamHelper
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem1;
+		private System.Windows.Forms.CheckBox checkBoxError;
+		private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem httphamexamwikidotcomToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBoxE;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-		private System.Windows.Forms.ToolStripMenuItem cWToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem quizExamToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem showExamAnswersToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem scoreToolStripMenuItem;
@@ -572,7 +567,6 @@ namespace HamExamHelper
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripMenuItem extraToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem techToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
